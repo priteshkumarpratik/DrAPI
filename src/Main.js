@@ -83,7 +83,7 @@ app.post('/api/appointments', (req, res) => {
       appt.appointmentDate === appointmentDate
   );
 
-  if (existingAppointments.length >= X) {
+  if (existingAppointments.length >= 10) {
     return res
       .status(400)
       .json({ message: `Doctor is fully booked for ${appointmentDate}` });
